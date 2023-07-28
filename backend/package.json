@@ -1,0 +1,15 @@
+{
+  "name": "transcendence_backend",
+  "version": "1.0.0",
+  "description": "backend pour transcendence",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "project-name/node_modules/.bin/nest start --watch"
+  },
+  "author": "Samuel Lord",
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs/cli": "^10.1.10"
+  }
+}
