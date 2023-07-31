@@ -9,9 +9,12 @@ services:
   backend:
     build:
       context: ./backend
-      dockerfile: Dockerfile
+      dockerfile: dockerfile
     volumes:
-      - ./backend:/app/backend
+      - ./backend:/app/backend:delegated
+      - ./app/backend/node_modules
+      
+
     ports:
       - "3001:3001"
     depends_on:
@@ -22,9 +25,14 @@ services:
   frontend:
     build:
       context: ./frontend
-      dockerfile: Dockerfile
+      dockerfile: dockerfile
     volumes:
-      - ./frontend:/app/frontend
+      # - ./frontend/src:/app/frontend/src
+      # - ./frontend/public:/app/frontend/public
+      # - ./frontend/package.json:/app/frontend/package.json
+      # - ./frontend/package-lock.json:/app/frontend/package-lock.json
+      - ./frontend:/app/frontend:delegated
+      - /app/frontend/node_modules
     ports:
       - "3000:3000"
     depends_on:
